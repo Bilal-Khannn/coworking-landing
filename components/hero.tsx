@@ -24,14 +24,14 @@ const Hero = () => {
               size="lg"
               className="w-full sm:w-auto rounded-full text-base"
             >
-              Get Started <ArrowUpRight className="!h-5 !w-5" />
+              Download For Windows
             </Button>
             <Button
               variant="outline"
               size="lg"
               className="w-full sm:w-auto rounded-full text-base shadow-none"
             >
-              <CirclePlay className="!h-5 !w-5" /> Watch Demo
+              Download For Mac
             </Button>
           </div>
         </div>
