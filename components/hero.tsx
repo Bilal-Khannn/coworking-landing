@@ -7,7 +7,18 @@ import Image from "next/image";
 const Hero = () => {
   const handleDownload = async (url: string) => {
     try {
-      window.location.href = `/api/download?url=${encodeURIComponent(url)}`;
+      // Create an invisible iframe for download
+      const iframe = document.createElement("iframe");
+      iframe.style.display = "none";
+      document.body.appendChild(iframe);
+
+      // Set iframe source to our download URL
+      iframe.src = `/api/download?url=${encodeURIComponent(url)}`;
+
+      // Remove iframe after a short delay
+      setTimeout(() => {
+        iframe.remove();
+      }, 2000);
     } catch (error) {
       console.error("Download failed:", error);
     }
