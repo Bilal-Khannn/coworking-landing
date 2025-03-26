@@ -1,9 +1,18 @@
+"use client";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight, CirclePlay } from "lucide-react";
 import Image from "next/image";
 
 const Hero = () => {
+  const handleDownload = async (url: string) => {
+    try {
+      window.location.href = `/api/download?url=${encodeURIComponent(url)}`;
+    } catch (error) {
+      console.error("Download failed:", error);
+    }
+  };
+
   return (
     <div className="min-h-[calc(100vh-4rem)] w-full flex items-center justify-center overflow-hidden border-b border-accent">
       <div className="max-w-screen-xl w-full flex flex-col lg:flex-row mx-auto items-center justify-between gap-y-14 gap-x-10 px-6 py-12 lg:py-0">
@@ -22,6 +31,11 @@ const Hero = () => {
             <Button
               size="lg"
               className="w-full sm:w-auto rounded-full text-base"
+              onClick={() =>
+                handleDownload(
+                  process.env.NEXT_PUBLIC_WINDOWS_DOWNLOAD_LINK || ""
+                )
+              }
             >
               Download For Windows
             </Button>
@@ -29,6 +43,9 @@ const Hero = () => {
               variant="outline"
               size="lg"
               className="w-full sm:w-auto rounded-full text-base shadow-none"
+              onClick={() =>
+                handleDownload(process.env.NEXT_PUBLIC_MAC_DOWNLOAD_LINK || "")
+              }
             >
               Download For Mac
             </Button>
