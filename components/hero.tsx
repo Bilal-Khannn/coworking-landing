@@ -12,12 +12,11 @@ const Hero = () => {
             Just released v1.0.0
           </Badge>
           <h1 className="mt-6 max-w-[20ch] text-3xl xs:text-4xl sm:text-5xl lg:text-[2.75rem] xl:text-5xl font-bold !leading-[1.2] tracking-tight">
-            Customized Shadcn UI Blocks & Components
+            Human-AI Co working Space
           </h1>
           <p className="mt-6 max-w-[60ch] xs:text-lg">
-            Explore a collection of Shadcn UI blocks and components, ready to
-            preview and copy. Streamline your development workflow with
-            easy-to-implement examples.
+            A human-AI co-working space interface that allows you to collaborate
+            with AI in a seamless and intuitive way.
           </p>
           <div className="mt-12 flex flex-col sm:flex-row items-center gap-4">
             <Button
@@ -35,12 +34,12 @@ const Hero = () => {
             </Button>
           </div>
         </div>
-        <div className="relative lg:max-w-lg xl:max-w-xl w-full bg-accent rounded-xl aspect-square">
+        <div className="relative lg:max-w-lg xl:max-w-xl w-full bg-transparent rounded-xl aspect-video">
           <Image
-            src="/placeholder.svg"
+            src="/coworking-image.png"
             fill
-            alt=""
-            className="object-cover rounded-xl"
+            alt="Human-AI Co-working Space Interface"
+            className="object-contain rounded-xl"
           />
         </div>
       </div>
